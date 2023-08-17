@@ -1,6 +1,6 @@
 import os, sys, json, xml.dom.minidom as minidom
 
-directory = "C:\\Kerem\\BUILD\\"+sys.argv[1]+"\\"      
+directory = "C:\\BUILD\\"+sys.argv[1]+"\\"      
 with open('.\environment.json') as f:
     data = json.load(f)
     RedisServer = data[sys.argv[1]]['RedisServer']
@@ -10,7 +10,7 @@ with open('.\environment.json') as f:
 
 for root, dirs, files in os.walk(directory):
     for file in files:
-        if "TurkcellMicroService.exe.config" in file:
+        if "MicroService.exe.config" in file:
             current_file = os.path.join(root, file)
             print (current_file)
             doc = minidom.parse(current_file)            
